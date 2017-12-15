@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
