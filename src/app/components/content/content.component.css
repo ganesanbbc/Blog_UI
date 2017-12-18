@@ -1,0 +1,11 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body{
+    padding: 0px;
+    margin: 2px;
+}
+
+.mat-card[_ngcontent-c2] {
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    margin: 15px;
+}
