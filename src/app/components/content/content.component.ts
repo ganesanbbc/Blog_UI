@@ -3,6 +3,7 @@ import { Http } from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import {MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 // Import RxJs required methods
@@ -19,17 +20,9 @@ export class ContentComponent implements OnInit {
 
   mData: Array<any>;
   
-    constructor(private http:Http, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer){
+    constructor(){
       
-      this.http.get('https://jsonplaceholder.typicode.com/photos')
-      .map(response => response.json())
-      .subscribe(res => this.mData = res);
       
-      iconRegistry.addSvgIconSetInNamespace('core',
-      sanitizer.bypassSecurityTrustResourceUrl('../assets/core-icon-set.svg'));
-  
-  
-     
     } 
   ngOnInit() {
   }

@@ -1,25 +1,43 @@
 
-<mat-card *ngFor="let data of mData | slice:0:5; let i=index;">
-    
-   <mat-card-header>
-       <div mat-card-avatar class="example-header-image"></div>
-       <mat-card-title>Shiba Inu</mat-card-title>
-       <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-     </mat-card-header>
-     <img mat-card-image src="{{data.url}}" alt="Photo of a Shiba Inu">
-     <mat-card-content>
-       <p>
-     {{i+1}}
-         The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-         A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-         bred for hunting.
-       </p>
-     </mat-card-content>
-     <mat-card-actions>
-       <button mat-button>LIKE</button>
-       <button mat-button>SHARE</button>
-     </mat-card-actions>
-   </mat-card>
-   <mat-card>
-<app-footer></app-footer>
-</mat-card>
+<main class="bd-masthead">
+  <div class="container">
+    <img class="bd-booticon" src="assets/icon.svg" alt="ng-bootstrap logo"/>
+    <h1 style="color:#fff">When project management software is used properly, it can help you deliver your projects on-time with a minimum amount of emotional scars</h1>
+  </div>
+</main>
+
+<div style="margin: 10px;">
+    <div class="row">
+        <div class="col-sm-4">
+          <div class="card" style="margin-bottom: 10px;">
+            <img class="card-img-top center" src="assets/project.svg" alt="Card image cap" >
+            <div class="card-body">
+              <h4 class="card-title">Projects</h4>
+              <p class="card-text" style="text-align:justify">Project is a collection of tasks. Your team could use a project to coordinate the development of a product, track a project,  and more, depending on your requirements. A project can also be configured to suit the needs of you and your team.</p>
+              <a href="#" class="btn btn-primary">Take to me</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card" style="margin-bottom: 10px;">
+              <img class="card-img-top center" src="assets/team.svg" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Team</h4>
+              <p class="card-text" style="text-align:justify">Teams are the champions for engage practices. Team members have different skill sets and cross-train each other so no one person becomes a bottleneck in the delivery of work. Strong teams approach their project with a clear "we" attitude.</p>
+              <a href="#" class="btn btn-primary">Build my team</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card" style="margin-bottom: 10px;">
+                <img class="card-img-top center" src="assets/task.svg" alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">Tasks</h4>
+                <p class="card-text" style="text-align:justify">A task is a unit of work contained within a story. All members of the team can twitte the task and product owner align the task as per the business need. Developer can self assign the task and change the state of the task. Product owner can track all task.</p>
+                
+                <a href="#" class="btn btn-primary">Show tasks</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
