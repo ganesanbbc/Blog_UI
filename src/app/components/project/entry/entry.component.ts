@@ -25,7 +25,7 @@ export class ProjectEntryComponent implements OnInit {
 
   onSubmit() {
       console.log("Form Submitted!");
-      console.log(this.projectname.value);
+      console.log(this.projectname);
   }
 
 }
