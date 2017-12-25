@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  ReactiveFormsModule,
+  FormsModule,
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder
+} from '@angular/forms';
 
 @Component({
   selector: 'app-entry',
@@ -7,9 +15,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectEntryComponent implements OnInit {
 
+  projectname: FormControl;
+  
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+      console.log("Form Submitted!");
+      console.log(this.projectname.value);
   }
 
 }

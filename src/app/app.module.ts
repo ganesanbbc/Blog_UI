@@ -4,6 +4,7 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule,Routes } from '@angular/router'
+import { FormsModule } from '@angular/forms';
 
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path : 'content',component : ContentComponent},
   {path: '', pathMatch: 'full', redirectTo: 'content'},
   {path : 'projects',component : ProjectListComponent},
+  {path: 'projects/:id', component: ProjectEntryComponent},
   {path : 'users',component : UserListComponent},
   {path : 'tasks',component : TaskListComponent}  
 ];
@@ -64,7 +66,8 @@ const routes: Routes = [
     MatCardModule, 
     MatMenuModule,   
     MatToolbarModule, 
-    MatIconModule
+    MatIconModule,
+    FormsModule
   ],
   exports: [
     RouterModule

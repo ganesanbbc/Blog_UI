@@ -1,17 +1,30 @@
 
 
   <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-        <img src="/assets/project.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-        Projects
-      </a>
-      <form class="form-inline my-2 my-lg-0">
+      
+
+     <div class="navbar-brand"> 
+      <a ><img src="/assets/project.svg" width="30" height="30" class="d-inline-block align-top" alt="">Project</a>
+      <a [routerLink]="['/projects',0]">Add New</a>
+    </div>
+      <div *ngIf="this.hasProject" style="display:inline">
+       <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
+
+      </div>
     </nav>
+<div *ngIf="!this.hasProject">
+  <div class="card" style="margin: 10px">
+    <div class="card-body">
+      <p class="card-text">Project is a collection of tasks. Your team could use a project to coordinate the development of a product, track a project,  and more, depending on your requirements. A project can also be configured to suit the needs of you and your team.</p>
+      <a [routerLink]="['/projects',0]" class="btn btn-primary">Create New Project </a>
+    </div>
+  </div>
+</div>
 
-
+<div *ngIf="this.hasProject">
 <li *ngFor="let item of projects">
     <div class="card" style="margin: 10px">
         <div class="card-body">
@@ -21,4 +34,5 @@
         </div>
       </div>
 </li>
+</div>
 

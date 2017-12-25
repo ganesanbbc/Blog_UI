@@ -1,0 +1,12 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+  
+  .entry-form {
+   
+    margin-bottom: rem;
+    background-color: rgb(212, 212, 212);
+    margin: 25px;
+    padding: 15px;
+  }
+

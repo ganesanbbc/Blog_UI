@@ -11,13 +11,19 @@ import { ProjectlistService } from "../service/projectlist.service"
 
 export class ProjectListComponent implements OnInit {
   projects: Project[];
+  hasProject: boolean;
 
-  constructor(private listapi: ProjectlistService) {}
+  constructor(private listapi: ProjectlistService) {
+    
+  }
 
   ngOnInit() : void {
       this.listapi.list()
       .then((projects)=>{
         this.projects = projects;
+        console.log(this.projects.length);
+        console.log(this.projects.length > 0);
+        this.hasProject = this.projects.length > 0;
       });
   }
 
