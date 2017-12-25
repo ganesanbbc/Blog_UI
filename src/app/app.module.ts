@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { RouterModule } from '@angular/router'
+import { RouterModule,Routes } from '@angular/router'
 
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -13,31 +13,51 @@ import {MatButtonModule, MatCheckboxModule, MatCardModule, MatMenuModule, MatToo
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ContentComponent } from './components/content/content.component';
-import { ListComponent } from './components/project/list/list.component';
-import { DetailComponent } from './components/project/detail/detail.component';
-import { EntryComponent } from './components/project/entry/entry.component';
+
+import { ProjectListComponent } from './components/project/list/list.component';
+import { ProjectDetailComponent } from './components/project/detail/detail.component';
+import { ProjectEntryComponent } from './components/project/entry/entry.component';
+
+import { UserListComponent } from './components/user/list/list.component';
+import { UserDetailComponent } from './components/user/detail/detail.component';
+import { UserEntryComponent } from './components/user/entry/entry.component';
+
+
+import { TaskListComponent } from './components/task/list/list.component';
+import { TaskDetailComponent } from './components/task/detail/detail.component';
+import { TaskEntryComponent } from './components/task/entry/entry.component';
+
+import { ProjectlistService } from './components/project/service/projectlist.service'
+
+const routes: Routes = [
+  {path : 'content',component : ContentComponent},
+  {path: '', pathMatch: 'full', redirectTo: 'content'},
+  {path : 'projects',component : ProjectListComponent},
+  {path : 'users',component : UserListComponent},
+  {path : 'tasks',component : TaskListComponent}  
+];
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ContentComponent,
-    ListComponent,
-    DetailComponent,
-    EntryComponent
+    ProjectListComponent,
+    ProjectDetailComponent,
+    ProjectEntryComponent,    
+    UserListComponent,
+    UserDetailComponent,
+    UserEntryComponent,
+    TaskListComponent,
+    TaskDetailComponent,
+    TaskEntryComponent
   ],
   imports: [
     NgbModule.forRoot(),
     BrowserModule,  
     BrowserAnimationsModule,
-    RouterModule.forRoot([
-      {
-        path : 'content',
-        component : ContentComponent
-      },
-      { path: '', pathMatch: 'full', redirectTo: 'content'}
-      
-    ], {useHash: true}),
+    RouterModule.forRoot(routes, {useHash: true}),
     HttpModule,HttpClientModule,
     MatButtonModule, 
     MatCheckboxModule, 
@@ -46,7 +66,10 @@ import { EntryComponent } from './components/project/entry/entry.component';
     MatToolbarModule, 
     MatIconModule
   ],
-  providers: [],
+  exports: [
+    RouterModule
+  ],
+  providers: [ProjectlistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

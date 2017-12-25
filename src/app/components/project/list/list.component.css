@@ -1,0 +1,26 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.navbar {
+    background: rgba(212, 212, 212, 0.95);
+  }
+  
+  .bd-booticon {
+    margin: 1.25rem;
+    width: 156px;
+    height: 156px;
+  }
+  
+  .bd-masthead {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    margin-bottom: rem;
+    text-align: center;
+    background-color: rgb(1, 163, 155);
+    background: linear-gradient(135deg, rgb(1, 158, 163), rgb(2, 205, 212));
+  }
+
+  .center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}

@@ -1,3 +1,18 @@
-<p>
-  list works!
-</p>
+
+<main class="bd-masthead">
+<div class="container">
+<img class="bd-booticon" src="assets/project.svg" alt="ng-bootstrap logo"/>
+<h1 style="color:#fff">Project</h1>
+</div>
+</main>
+
+<li *ngFor="let item of projects">
+    <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">{{ item.getname() }}</h4>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+</li>
+

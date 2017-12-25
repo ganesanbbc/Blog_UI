@@ -14,7 +14,7 @@
             <div class="card-body">
               <h4 class="card-title">Projects</h4>
               <p class="card-text" style="text-align:justify">Project is a collection of tasks. Your team could use a project to coordinate the development of a product, track a project,  and more, depending on your requirements. A project can also be configured to suit the needs of you and your team.</p>
-              <a href="#" class="btn btn-primary">Take to me</a>
+              <a  [routerLink]="['/projects']" class="btn btn-primary">Take to me</a>
             </div>
           </div>
         </div>
@@ -24,7 +24,7 @@
             <div class="card-body">
               <h4 class="card-title">Team</h4>
               <p class="card-text" style="text-align:justify">Teams are the champions for engage practices. Team members have different skill sets and cross-train each other so no one person becomes a bottleneck in the delivery of work. Strong teams approach their project with a clear "we" attitude.</p>
-              <a href="#" class="btn btn-primary">Build my team</a>
+              <a [routerLink]="['/users']"  class="btn btn-primary">Build my team</a>
             </div>
           </div>
         </div>
@@ -35,7 +35,7 @@
                 <h4 class="card-title">Tasks</h4>
                 <p class="card-text" style="text-align:justify">A task is a unit of work contained within a story. All members of the team can twitte the task and product owner align the task as per the business need. Developer can self assign the task and change the state of the task. Product owner can track all task.</p>
                 
-                <a href="#" class="btn btn-primary">Show tasks</a>
+                <a [routerLink]="['/tasks']"  class="btn btn-primary">Show tasks</a>
               </div>
             </div>
           </div>
