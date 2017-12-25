@@ -1,17 +1,23 @@
 
-<main class="bd-masthead">
-<div class="container">
-<img class="bd-booticon" src="assets/project.svg" alt="ng-bootstrap logo"/>
-<h1 style="color:#fff">Project</h1>
-</div>
-</main>
+
+  <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="/assets/project.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        Projects
+      </a>
+      <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+
 
 <li *ngFor="let item of projects">
-    <div class="card">
+    <div class="card" style="margin: 10px">
         <div class="card-body">
           <h4 class="card-title">{{ item.getname() }}</h4>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a href="#" class="btn btn-primary">Show More</a>
         </div>
       </div>
 </li>
