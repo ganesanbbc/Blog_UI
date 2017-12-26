@@ -4,7 +4,14 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule,Routes } from '@angular/router'
-import { FormsModule } from '@angular/forms';
+import {
+  ReactiveFormsModule,
+  FormsModule,
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder
+} from '@angular/forms';
 
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -67,7 +74,8 @@ const routes: Routes = [
     MatMenuModule,   
     MatToolbarModule, 
     MatIconModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     RouterModule

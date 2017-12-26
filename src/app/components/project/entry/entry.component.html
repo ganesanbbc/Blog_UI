@@ -1,43 +1,61 @@
-<div class="entry-form" >
-    <form  (ngSubmit)="onSubmit()">
-      
-    <div class="form-group">
-        <label for="projectname">Project Name </label>
-        <input type="projectname" class="form-control" id="projectname" aria-describedby="projectHelp" placeholder="Enter Project Name">
-        <small id="projectHelp" class="form-text text-muted">Allow plain text without any characters</small>
-      </div>
 
+<div class="entry-form">
+  <form class="form-horizontal" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label for="projectname" class="control-label">Project Name</label>
+          <input type="text" id="projectname" class="form-control" formControlName="projectname">
+        </div>
+      </div>
+    
       <div class="form-row">
-          <div class="col form-group">
+          <div class="col-sm-6 form-group">
               <label for="projectname">Start Date </label>
               <div class="input-group">
                 <input class="form-control" placeholder="yyyy-mm-dd" name="d1" 
                 [(ngModel)]="model1" 
-                ngbDatepicker #d1="ngbDatepicker">
+                ngbDatepicker #d1="ngbDatepicker" formControlName="startdate" type="startdate" id="startdate" >
                 <button class="input-group-addon" (click)="d1.toggle()" type="button">
-                  <img src="assets/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                  <img src="assets/calendar-icon.svg" style="width: 2.2rem; height: 1rem; cursor: pointer;"/>
                 </button>
               </div>
             </div>
-            <div class="col form-group">
+            <div class="col-sm-6 form-group">
                 <label for="projectname">End Date </label>
                 <div class="input-group">
                   <input class="form-control" placeholder="yyyy-mm-dd"
-                         name="project_end_date" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                         name="project_end_date" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker"
+                         formControlName="enddate" type="enddate" id="enddate"  >
                   <button class="input-group-addon" (click)="d.toggle()" type="button">
-                    <img src="assets/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                    <img src="assets/calendar-icon.svg" style="width: 2.2rem; height: 1rem; cursor: pointer;"/>
                   </button>
                 </div>
               </div>
       </div>
+
       <div class="form-group">
-          <label for="userid">Project Name </label>
-          <input type="userid" class="form-control" id="userid"  placeholder="Enter Manager Id">
+          <div class="col-sm-12">
+            <label for="priority" class="control-label">Priority</label>
+            <input type="priority" id="priority" class="form-control" formControlName="priority">
+            <small id="projectHelp" class="form-text text-muted">[XS-1, S-2 & 3, M-5,L-8 ,XL-~]</small>
+          </div>
+        </div>
+
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label for="userid" class="control-label">Manager ID</label>
+          <input type="userid" id="userid" class="form-control" formControlName="userid">
+          
+        </div>
       </div>
-      <button type="submit" class="btn btn-primary">Create new project</button>
 
 
+    
+      <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+        Submit
+      </button>
+    
     </form>
-
-
-</div>
+  </div>
