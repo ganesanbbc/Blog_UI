@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {Project } from "../project.model"
-import { ProjectlistService } from "../service/projectlist.service"
+import { ProjectlistService } from "./projectlist.service"
 
 @Component({
   selector: 'app-list',
@@ -12,7 +12,6 @@ import { ProjectlistService } from "../service/projectlist.service"
 export class ProjectListComponent implements OnInit {
   projects: Project[];
   hasProject: boolean;
-
   constructor(private listapi: ProjectlistService) {
     
   }

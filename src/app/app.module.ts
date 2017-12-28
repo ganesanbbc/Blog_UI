@@ -35,7 +35,7 @@ import { TaskListComponent } from './components/task/list/list.component';
 import { TaskDetailComponent } from './components/task/detail/detail.component';
 import { TaskEntryComponent } from './components/task/entry/entry.component';
 
-import { ProjectlistService } from './components/project/service/projectlist.service'
+import { ProjectlistService } from './components/project/list/projectlist.service'
 
 const routes: Routes = [
   {path : 'content',component : ContentComponent},
