@@ -14,7 +14,7 @@ export class ProjectListComponent implements OnInit {
   hasProject: boolean;;
   search: string;
 
-  
+
   constructor(private listapi: ProjectlistService) {
     
   }
@@ -27,6 +27,10 @@ export class ProjectListComponent implements OnInit {
         console.log(this.projects.length > 0);
         this.hasProject = this.projects.length > 0;
       });
+  }
+
+  onItemClick(item){
+    console.log(item.name);
   }
 
   myEvent($event){
