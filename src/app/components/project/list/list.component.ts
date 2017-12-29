@@ -11,7 +11,10 @@ import { ProjectlistService } from "./projectlist.service"
 
 export class ProjectListComponent implements OnInit {
   projects: Project[];
-  hasProject: boolean;
+  hasProject: boolean;;
+  search: string;
+
+  
   constructor(private listapi: ProjectlistService) {
     
   }
@@ -24,6 +27,10 @@ export class ProjectListComponent implements OnInit {
         console.log(this.projects.length > 0);
         this.hasProject = this.projects.length > 0;
       });
+  }
+
+  myEvent($event){
+    console.log(this.search);
   }
 
 }
