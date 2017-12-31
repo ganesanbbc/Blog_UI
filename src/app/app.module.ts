@@ -36,6 +36,7 @@ import { TaskDetailComponent } from './components/task/detail/detail.component';
 import { TaskEntryComponent } from './components/task/entry/entry.component';
 
 import { ProjectlistService } from './components/project/list/projectlist.service'
+import { ProjectupdateService } from './components/project/entry/projectupdate.service';
 
 const routes: Routes = [
   {path : 'content',component : ContentComponent},
@@ -80,7 +81,7 @@ const routes: Routes = [
   exports: [
     RouterModule
   ],
-  providers: [ProjectlistService],
+  providers: [ProjectlistService, ProjectupdateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

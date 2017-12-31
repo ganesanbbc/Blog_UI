@@ -17,7 +17,7 @@ export class ProjectlistService {
   list() {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
-    return this.http.get("https://jsonplaceholder.typicode.com/users", {
+    return this.http.get("http://localhost:8080/projects", {
       headers: headers
     })
     .toPromise()
@@ -26,8 +26,17 @@ export class ProjectlistService {
       let projectList = [];
       data.forEach((entry) => {
         let proj = new Project();
+        proj.id = entry.id;
         proj.name = entry.name;
+        proj.startDate = entry.startDate;
+        proj.endDate = entry.endDate;
+        proj.status = entry.status;
+        proj.priority = entry.priority;
         console.log(proj.name);
+        console.log(proj.startDate);
+        console.log(proj.endDate);
+        console.log(proj.status);
+        console.log(proj.priority);
         projectList.push(proj);
       });
 

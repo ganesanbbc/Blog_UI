@@ -1,8 +1,12 @@
-export class Project {
-    name: string;
-    constructor() {}
 
-    getname(){
-        return this.name;
-    }
+import { User } from "../user/user.model"
+
+export class Project {
+    id: number;
+    name: string;
+    startDate: string;
+    endDate: string;
+    priority: string;
+    status: string;
+    users: User[];
 }
