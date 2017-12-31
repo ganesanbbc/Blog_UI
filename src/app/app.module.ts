@@ -37,12 +37,15 @@ import { TaskEntryComponent } from './components/task/entry/entry.component';
 
 import { ProjectlistService } from './components/project/list/projectlist.service'
 import { ProjectupdateService } from './components/project/entry/projectupdate.service';
+import { ProjectreadService } from './components/project/detail/service/projectread.service';
+
 
 const routes: Routes = [
   {path : 'content',component : ContentComponent},
   {path: '', pathMatch: 'full', redirectTo: 'content'},
   {path : 'projects',component : ProjectListComponent},
   {path: 'projects/:id', component: ProjectEntryComponent},
+  {path: 'projects/detail/:id', component: ProjectDetailComponent},
   {path : 'users',component : UserListComponent},
   {path : 'tasks',component : TaskListComponent}  
 ];
@@ -81,7 +84,7 @@ const routes: Routes = [
   exports: [
     RouterModule
   ],
-  providers: [ProjectlistService, ProjectupdateService],
+  providers: [ProjectlistService, ProjectupdateService,ProjectreadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

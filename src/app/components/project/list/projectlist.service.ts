@@ -32,11 +32,11 @@ export class ProjectlistService {
         proj.endDate = entry.endDate;
         proj.status = entry.status;
         proj.priority = entry.priority;
-        console.log(proj.name);
-        console.log(proj.startDate);
-        console.log(proj.endDate);
-        console.log(proj.status);
-        console.log(proj.priority);
+        // console.log(proj.name);
+        // console.log(proj.startDate);
+        // console.log(proj.endDate);
+        // console.log(proj.status);
+        // console.log(proj.priority);
         projectList.push(proj);
       });
 

@@ -25,14 +25,14 @@
 </div>
 
 <div *ngIf="this.hasProject">
- <li *ngFor="let item of projects" [routerLink]="['/projects',item.id]"  >
+ <li *ngFor="let item of projects" [routerLink]="['/projects/detail',item.id]"  >
     <div class="card" style="margin: 10px">
         <div class="card-body">
           <h4 class="card-title">{{ item.name }}</h4>
           <p class="card-text"><b>Start Date :</b>{{ item.startDate }} - <b>End Date</b> :{{item.endDate}}</p>
           <p class="card-text"></p>
           <p class="card-text"><b>Priority: </b>{{item.priority}}</p>
-          <a [routerLink]="['/projects',item.id]" class="btn btn-primary">Show More</a>
+          <a [routerLink]="['/projects/detail',item.id ]" class="btn btn-primary">Show More</a>
         </div>
       </div>
 </li>

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {Location} from '@angular/common';
 import {
   ReactiveFormsModule,
   FormsModule,
@@ -23,10 +24,15 @@ export class ProjectEntryComponent implements OnInit {
 
 
   form: FormGroup;
-  
+  _location: Location;
+
   @Input() project:Project;
 
-  constructor(private formBuilder: FormBuilder, private _projectupdateService: ProjectupdateService) { }
+  constructor(private formBuilder: FormBuilder, 
+    private _projectupdateService: ProjectupdateService,
+    private location: Location) {
+      this._location = location;
+     }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -66,6 +72,7 @@ export class ProjectEntryComponent implements OnInit {
      ]
 
       this._projectupdateService.createProject(this.project);
+      this._location.back();
 
     } else {
       // validate all form fields
