@@ -1,3 +1,36 @@
-<p>
-  entry works!
-</p>
+
+<div class="entry-form">
+  <form class="form-horizontal" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label for="projectname" class="control-label">Name</label>
+          <input type="text" id="projectname" class="form-control" formControlName="name">
+        </div>
+      </div>
+  
+
+      <div class="form-group">
+          <div class="col-sm-12">
+            <label for="priority" class="control-label">Email</label>
+            <input type="priority" id="priority" class="form-control" formControlName="email">
+          </div>
+        </div>
+
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label for="userid" class="control-label">Role</label>
+          <input type="userid" id="userid" class="form-control" formControlName="role">
+          
+        </div>
+      </div>
+
+
+    
+      <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+        Submit
+      </button>
+    
+    </form>
+  </div>
