@@ -1,10 +1,16 @@
 
 
+<main class="bd-masthead">
+  <div class="container">
+    <img class="bd-booticon" src="assets/project.svg" alt="ng-bootstrap logo"/>
+    <h1 style="color:#fff">Project</h1>
+  </div>
+</main>
+  
   <nav class="navbar navbar-light bg-light">
       
 
      <div class="navbar-brand"> 
-      <a ><img src="/assets/project.svg" width="30" height="30" class="d-inline-block align-top" alt="">Project</a>
       <a [routerLink]="['/projects',0]">Add New</a>
     </div>
       <div *ngIf="this.hasProject" style="display:inline">
