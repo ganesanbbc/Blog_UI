@@ -6,3 +6,26 @@
     </div>
   </main>
   
+  <nav class="navbar navbar-light bg-light">
+      <div class="navbar-brand"> 
+     <a [routerLink]="['/tasks/create']">Add New</a>
+   </div>
+      <form class="form-inline my-2 my-lg-0">
+         <input class="form-control mr-sm-2 " id="search" type="input" name="search" [(ngModel)]="search" placeholder="Search" aria-label="Search">
+         <button class="btn btn-outline-success my-2 my-sm-0"  (click)="myEvent($event)" type="submit">Search</button>
+       </form>
+   </nav>
+    
+  
+    <li *ngFor="let item of tasks" [routerLink]="['/tasks/detail',item.id]"  >
+       <div class="card" style="margin: 10px">
+           <div class="card-body">
+            <h4 class="card-title">{{ item.name }}</h4>
+             <p class="card-text"><b>Start Date :</b>{{ item.startDate }} - <b>End Date</b> :{{item.endDate}}</p>
+             <p class="card-text">Status : {{ item.status }}</p>
+              <p class="card-text"><b>Priority: </b>{{item.priority}}</p>
+             <a [routerLink]="['/tasks/detail',item.id ]" class="btn btn-primary">Show More</a>
+           </div>
+         </div>
+   </li>
+  

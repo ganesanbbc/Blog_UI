@@ -9,7 +9,7 @@
       
 
     <div class="navbar-brand"> 
-     <a [routerLink]="['/user/create',0]">Add New</a>
+     <a [routerLink]="['/users/create']">Add New</a>
    </div>
       <form class="form-inline my-2 my-lg-0">
          <input class="form-control mr-sm-2 " id="search" type="input" name="search" [(ngModel)]="search" placeholder="Search" aria-label="Search">
@@ -18,13 +18,13 @@
    </nav>
     
   
-    <li *ngFor="let item of users" [routerLink]="['/user/detail',item.id]"  >
+    <li *ngFor="let item of users" [routerLink]="['/users/detail',item.id]"  >
        <div class="card" style="margin: 10px">
            <div class="card-body">
              <h4 class="card-title">{{ item.name }}</h4>
              <p class="card-text"><b>Email : </b>{{ item.email }} </p>
              <p class="card-text"><b>Role : </b>{{ item.role }} </p>
-             <a [routerLink]="['/user/detail',item.id ]" class="btn btn-primary">Show More</a>
+             <a [routerLink]="['/users/detail',item.id ]" class="btn btn-primary">Show More</a>
            </div>
          </div>
    </li>
