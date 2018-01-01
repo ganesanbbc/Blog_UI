@@ -40,16 +40,30 @@ import { ProjectupdateService } from './components/project/entry/projectupdate.s
 import { ProjectreadService } from './components/project/detail/service/projectread.service';
 
 import { UserlistService } from './components/user/list/userlistservice.service'
+import { UserdetailService } from './components/user/detail/userdetail.service'
+import { UserentryService } from './components/user/entry/userentry.service'
+
+import { TasklistService } from './components/task/list/tasklist.service'
+import { TaskdetailService } from './components/task/detail/taskdetail.service'
+import { TaskentryService } from './components/task/entry/taskentry.service'
 
 
 const routes: Routes = [
   {path : 'content',component : ContentComponent},
   {path: '', pathMatch: 'full', redirectTo: 'content'},
+  
   {path : 'projects',component : ProjectListComponent},
   {path: 'projects/:id', component: ProjectEntryComponent},
   {path: 'projects/detail/:id', component: ProjectDetailComponent},
+
   {path : 'users',component : UserListComponent},
-  {path : 'tasks',component : TaskListComponent}  
+  {path : 'users/create',component : UserEntryComponent},
+  {path : 'users/detail/:id',component : UserDetailComponent},
+
+  {path : 'tasks',component : TaskListComponent},  
+  {path : 'tasks/create',component : TaskEntryComponent},
+  {path : 'tasks/detail/:id',component : TaskDetailComponent}
+  
 ];
 
 
@@ -86,8 +100,10 @@ const routes: Routes = [
   exports: [
     RouterModule
   ],
-  providers: [ProjectlistService, ProjectupdateService,ProjectreadService,
-  UserlistService],
+  providers: 
+  [ProjectlistService, ProjectupdateService,ProjectreadService,
+  UserlistService, UserentryService, UserdetailService,
+  TasklistService, TaskentryService, TaskdetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

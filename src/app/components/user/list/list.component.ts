@@ -14,6 +14,7 @@ import { UserlistService } from "./userlistservice.service"
 export class UserListComponent implements OnInit {
 
   users: User[];
+  search: string;
   
   constructor(private listapi: UserlistService) {
     
@@ -29,6 +30,11 @@ export class UserListComponent implements OnInit {
   onItemClick(item){
     console.log(item.name);
   }
+
+  myEvent($event){
+    console.log(this.search);
+  }
+
 
 
 }
