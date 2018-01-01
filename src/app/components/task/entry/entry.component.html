@@ -2,6 +2,10 @@
 <div class="entry-form">
   <form class="form-horizontal" [formGroup]="form" (ngSubmit)="onSubmit()">
 
+     
+
+    
+
       <div class="form-group">
         <div class="col-sm-12">
           <label for="projectname" class="control-label">Task</label>
@@ -9,7 +13,16 @@
         </div>
       </div>
 
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label for="projectname" class="control-label">Is a parent task?</label>
+          <input type="checkbox" id="projectname" class="form-control" formControlName="checkboxValue" 
+          (ngModelChange)="addProp($event)"/>
+        </div>
+      </div>
 
+      <div *ngIf="!this.checkboxValue">
+      
       <div class="form-group">
         <div class="col-sm-12">
           <label for="projectname" class="control-label">Description</label>
@@ -66,6 +79,7 @@
         </div>
       </div>
     
+      </div>
       <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
         Submit
       </button>

@@ -11,7 +11,12 @@ import {
 import { NgbDateParserFormatter, NgbDateStruct } from "@ng-bootstrap/ng-bootstrap";
 
 import { Task } from "../task.model"
+import { ParentTask } from "../parenttask.model"
 import { TaskentryService } from "./taskentry.service"
+import { ParenttaskentryService } from "./parenttaskentry.service"
+
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 @Component({
   selector: 'app-entry',
@@ -22,11 +27,21 @@ export class TaskEntryComponent implements OnInit {
   
   form: FormGroup;
   _location: Location;
+  checkboxValue:boolean = false;
+
+  addProp($event){
+    this.checkboxValue = !this.form.get('checkboxValue').value;
+    console.log(this.checkboxValue);
+  }
+
+
 
   @Input() task:Task;
+  @Input() parenttask:ParentTask;
 
   constructor(private formBuilder: FormBuilder, 
     private _service: TaskentryService,
+    private _parenttaskservice: ParenttaskentryService,
     private location: Location) {
       this._location = location;
      }
@@ -38,23 +53,29 @@ export class TaskEntryComponent implements OnInit {
       projectid: [null],
       startdate: [null],
       enddate: [null],
-      priority: [null]
+      priority: [null],
+      checkboxValue:[false]
     });
 
     this.task = new Task();
+    this.parenttask = new ParentTask();
   }
 
   onSubmit() {
     if (this.form.valid) {
-      console.log('form submitted');
-      console.log('form submitted'+this.form.get('name').value)
-      console.log('form submitted'+this.form.get('desc').value);
-      console.log('form submitted'+this.form.get('startdate').value);
-      console.log('form submitted'+this.form.get('enddate').value);
-      console.log('form submitted'+this.form.get('priority').value);
-      console.log('form submitted'+this.form.get('projectid').value);
-      console.log('form submitted'+this.form.get('userid').value);
       
+      
+    //  let user: User;
+    //  user.name = this.form.get('userid').value
+    //  let userlist: User[];
+    //  userlist.push(user);
+
+    //  this.project.users = userlist;
+
+    if(this.checkboxValue){
+      this.parenttask.name = this.form.get('name').value;
+      this._parenttaskservice.createTask(this.parenttask);
+    }else{
       let _startDate = this.form.get('startdate').value.year+'-'+this.form.get('startdate').value.month+'-'+
       this.form.get('startdate').value.day
 
@@ -68,14 +89,10 @@ export class TaskEntryComponent implements OnInit {
      this.task.priority = this.form.get('priority').value;
      this.task.status= 'open';
 
-    //  let user: User;
-    //  user.name = this.form.get('userid').value
-    //  let userlist: User[];
-    //  userlist.push(user);
-
-    //  this.project.users = userlist;
-
       this._service.createTask(this.task);
+      
+    }
+
       this._location.back();
 
     } else {

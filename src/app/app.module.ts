@@ -46,6 +46,7 @@ import { UserentryService } from './components/user/entry/userentry.service'
 import { TasklistService } from './components/task/list/tasklist.service'
 import { TaskdetailService } from './components/task/detail/taskdetail.service'
 import { TaskentryService } from './components/task/entry/taskentry.service'
+import { ParenttaskentryService } from './components/task/entry/parenttaskentry.service'
 
 
 const routes: Routes = [
@@ -103,7 +104,7 @@ const routes: Routes = [
   providers: 
   [ProjectlistService, ProjectupdateService,ProjectreadService,
   UserlistService, UserentryService, UserdetailService,
-  TasklistService, TaskentryService, TaskdetailService],
+  TasklistService, TaskentryService, TaskdetailService, ParenttaskentryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
