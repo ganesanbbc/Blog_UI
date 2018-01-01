@@ -10,8 +10,7 @@ export class ProjectupdateService {
   add_project: string = 'http://localhost:8080/projects';
 
   http: Http;
-  returnCommentStatus:Object = [];
-   
+ 
 
   constructor(public _http: Http) {
     this.http = _http;
