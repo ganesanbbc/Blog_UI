@@ -19,7 +19,6 @@ export class ProjectupdateService {
 
   createProject(project:Project){
 
-    console.log('In Service::::::: '+ project.users[0].name);
     
     this.http.post(this.add_project, project, { 
     }).subscribe(

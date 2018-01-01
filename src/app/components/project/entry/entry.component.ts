@@ -12,6 +12,7 @@ import { NgbDateParserFormatter, NgbDateStruct } from "@ng-bootstrap/ng-bootstra
 
 import { Project } from "../project.model"
 import { User } from "../../user/user.model"
+
 import { ProjectupdateService } from "./projectupdate.service"
 
 
@@ -51,8 +52,6 @@ export class ProjectEntryComponent implements OnInit {
       console.log('form submitted');
       console.log('form submitted'+this.form.get('projectname').value);
       console.log('form submitted'+this.form.get('userid').value);
-      console.log('form submitted'+this.form.get('startdate').value);
-      console.log('form submitted'+this.form.get('enddate').value);
       console.log('form submitted'+this.form.get('priority').value);
 
       let _startDate = this.form.get('startdate').value.year+'-'+this.form.get('startdate').value.month+'-'+
@@ -61,6 +60,10 @@ export class ProjectEntryComponent implements OnInit {
       let _endDate = this.form.get('enddate').value.year+'-'+this.form.get('enddate').value.month+'-'+
       this.form.get('enddate').value.day
 
+      console.log('form submitted'+_startDate);
+      console.log('form submitted'+_endDate);
+
+
 
      this.project.name = this.form.get('projectname').value;
      this.project.startDate = _startDate;
@@ -68,9 +71,10 @@ export class ProjectEntryComponent implements OnInit {
      this.project.priority = this.form.get('priority').value;
      this.project.status= 'open';
 
-     let user: User;
+     let user: User = new User();
      user.name = this.form.get('userid').value
-     let userlist: User[];
+
+     let userlist: User[] = [];
      userlist.push(user);
 
      this.project.users = userlist;
