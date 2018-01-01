@@ -67,9 +67,13 @@ export class ProjectEntryComponent implements OnInit {
      this.project.endDate = _endDate;
      this.project.priority = this.form.get('priority').value;
      this.project.status= 'open';
-     this.project.users = [
-         { name : this.form.get('userid').value }
-     ]
+
+     let user: User;
+     user.name = this.form.get('userid').value
+     let userlist: User[];
+     userlist.push(user);
+
+     this.project.users = userlist;
 
       this._projectupdateService.createProject(this.project);
       this._location.back();

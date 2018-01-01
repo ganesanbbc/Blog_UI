@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
+
+import {User } from "../user.model"
+import { UserlistService } from "./userlistservice.service"
+
+
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -7,9 +13,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  users: User[];
+  
+  constructor(private listapi: UserlistService) {
+    
   }
+
+  ngOnInit() : void {
+      this.listapi.list()
+      .then((user)=>{
+        this.users = user;
+      });
+  }
+
+  onItemClick(item){
+    console.log(item.name);
+  }
+
 
 }

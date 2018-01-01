@@ -39,6 +39,8 @@ import { ProjectlistService } from './components/project/list/projectlist.servic
 import { ProjectupdateService } from './components/project/entry/projectupdate.service';
 import { ProjectreadService } from './components/project/detail/service/projectread.service';
 
+import { UserlistService } from './components/user/list/userlistservice.service'
+
 
 const routes: Routes = [
   {path : 'content',component : ContentComponent},
@@ -84,7 +86,8 @@ const routes: Routes = [
   exports: [
     RouterModule
   ],
-  providers: [ProjectlistService, ProjectupdateService,ProjectreadService],
+  providers: [ProjectlistService, ProjectupdateService,ProjectreadService,
+  UserlistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
